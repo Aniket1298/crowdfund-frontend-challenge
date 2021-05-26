@@ -1,0 +1,184 @@
+@import url(https://fonts.google.com/specimen/Commissioner); 
+
+  .hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image:  url("../images/image-hero-desktop.jpg");
+  
+    /* Set a specific height */
+    height: 70mm;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;                             
+    padding-left: 4%;
+    padding-top: 1%;
+  }
+  .content{
+    padding: 10px;
+    margin: auto;
+    
+    width: 50%;
+    margin-bottom: 100px;
+  }
+
+  .text-section p{
+    color: gray;
+    font-weight: 400;
+    font-size: 15px;
+    font-family:Commisioner;
+    
+  }
+  .detail{
+    display: flex;
+    flex-direction: column;
+    display: block;
+    background-color:white;
+    text-align: center;
+    margin-bottom: 10%;
+    padding-bottom: 10px;
+    border-radius: 1.5%;
+    
+  }
+
+  .navbar{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-top: 3%;
+  padding-right: 3%;
+}
+.links{
+  width: 20%;
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.status{
+  border-radius: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 3%;
+  margin-bottom: 20px;
+  border-radius: 1.5%;
+  border-color: bisque;
+
+}
+.button-section{
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+}
+.section{
+  display: flex;
+  border-radius: 1.5%;
+  flex-direction: column;
+  background-color: white;
+  padding: 5%;
+}
+
+.divider {
+  width: 10px;
+  height: 100%;
+  background-color: teal;
+  color: aqua;
+}
+.about{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  display: block;
+  background-color:white;
+  margin-bottom: 10%;
+  padding-bottom: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 1.5%;
+  
+}
+
+.upper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.upper  p{
+  font-size: 120%;
+  font-weight: 500;
+  color: hsl(176, 50%, 47%);
+}
+.product{
+  
+  border-radius: 10px;
+  border:1px solid;
+  padding: 2%;
+  margin-top: 5%;
+}
+.remaining{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.progress{
+  background: red;
+}
+.verticaldivider{
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  height: 55px;
+  
+        
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.enter{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.box{
+  border: 2px solid rgb(194, 191, 191);
+  border-radius: 10%;
+}
