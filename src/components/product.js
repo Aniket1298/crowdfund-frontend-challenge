@@ -11,6 +11,7 @@ export default function Product (props) {
     }
     function handleClick(){
         setLeft(left-1)
+        props.handleCancel()
         props.backproject(amount)
     }
     

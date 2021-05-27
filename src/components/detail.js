@@ -68,11 +68,11 @@ export default function  Detail(props) {
                             </div>
                             
                             <Radio value={2}>
-                            <Product pledge={true} name={"Bamboo Stand"} left={101} cost={12} backproject ={props.backproject}/>
+                            <Product pledge={true} name={"Bamboo Stand"} left={101} cost={12} backproject ={props.backproject} handleCancel={handleCancel}/>
                 
                             </Radio>
                             <Radio value={3}  >
-                            <Product pledge={true} name={"Black Edition Stand"} left={64}  cost={25} backproject ={props.backproject}/>
+                            <Product pledge={true} name={"Black Edition Stand"} left={64}  cost={25} backproject ={props.backproject} handleCancel={handleCancel}/>
                             </Radio>
                             
                             </Space>
