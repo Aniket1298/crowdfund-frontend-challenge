@@ -1,23 +1,30 @@
-import React from "react"
+import {React ,useState} from "react"
 import './style.css';
 import { Button,InputNumber } from 'antd';
 
-export default class Product extends React.Component {
-    constructor(props){
-        super(props)
+
+export default function Product (props) {
+    const [amount,setAmount ] = useState(0)
+    const [left,setLeft]=useState(props.left)
+    function  handleChange(value){
+        setAmount(value)
     }
-    render(){
+    function handleClick(){
+        setLeft(left-1)
+        props.backproject(amount)
+    }
+    
         return(
             <div className="product" style={{borderColor:"rgb(224, 223, 223)"}}>
                 <div className="upper">
                     <h3>
-                        {this.props.name}
+                        {props.name}
                     </h3>
                     <p>
-                        Pledge ${this.props.cost} or more
+                        Pledge ${props.cost} or more   
                     </p>
-                    {this.props.pledge ? <p>{"     "}</p>  :null}
-                    {this.props.pledge ? <h2>{this.props.left} left</h2> : null }
+                    {props.pledge ? <p>{"     "}</p>  :null}
+                    {props.pledge ? <h2>{props.left} left</h2> : null }
                     
 
                 </div>
@@ -27,20 +34,20 @@ export default class Product extends React.Component {
   you’ll be added to a special Backer member list.
                         </p>
                     </div>
-                {this.props.pledge ? <hr backgroundcolor="rgb(255, 255, 255)" ></hr> :null}
+                {props.pledge ? <hr backgroundcolor="rgb(255, 255, 255)" ></hr> :null}
                 <div className="remaining">
-                {!this.props.pledge ? <h2>101 left</h2> : null }
-                {this.props.pledge ? <div><p>Enter Your Pledge</p></div> :null}
-                {!this.props.pledge ? <Button type="primary" shape="round"  size={"large"}  style={{ background: "hsl(176, 50%, 47%)", }}>
+                {!props.pledge ? <h2>{left} left</h2> : null }
+                {props.pledge ? <div><p>Enter Your Pledge</p></div> :null}
+                {!props.pledge ? <Button type="primary" shape="round"  size={"large"}  style={{ background: "hsl(176, 50%, 47%)", }}>
                         Select Reward
                 </Button> :null}
-                {this.props.pledge? <div>
+                {props.pledge? <div>
                     <div className="enter">
                         <div className="box">
-                            $ <InputNumber min={this.props.cost} defaultValue={this.props.cost} bordered={false} />
+                            $ <InputNumber min={props.cost} defaultValue={props.cost} bordered={false} onChange={handleChange} />
                         </div>
                         <div style={{}}>{" "}</div>
-                        <Button type="primary" shape="round"  size={"large"}  style={{ background: "hsl(176, 50%, 47%)", }}>
+                        <Button type="primary" shape="round"  size={"large"}  style={{ background: "hsl(176, 50%, 47%)", }} onClick={handleClick}>
                             Continue
                         </Button>    
                     </div>
@@ -51,4 +58,3 @@ export default class Product extends React.Component {
             </div>
         )
     }
-}

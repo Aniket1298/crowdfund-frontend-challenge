@@ -6,33 +6,40 @@ import Detail from './detail'
 import Status from './status'
 import About from "./about";
 import { Modal, Button } from 'antd';
-
-
-export default class Content extends React.Component {
-    constructor(props){
-        super(props)
-        this.ref = React.createRef();
-        this.state={
-            amount:89914,
-            backers:5007
+var data={
+    amount:89914,
+    total:100000,
+    backers:5007,
+    products:[
+        {
+            name:"Bamboo Stand",
+            left:101,
+            cost:12
         }
-        this.backproject=this.backproject.bind(this)
-
+        ,
+        {
+            name:"Black Edition Stand",
+            left:64,
+            cost:25
+        }
+    ]
+}
+export default function  Content(){
+    
+    const [amount, setAmount] = useState(data.amount)
+    const [backers,setBackers]= useState(data.backers)
+    const [total,setTotal]= useState(data.total)
+    function backproject(inc){
+        var newAmount = amount-inc
+        setAmount(newAmount)
+        setBackers(backers+1)
     }
     
-    backproject(amount){
-      
-        this.setState({amount:this.state.amount-amount})
-        return(this.state.amount)
-    }
-    
-    render(){
-        return(
-            <div className="content">
-                <Detail backproject={this.backproject}/>
-                <Status/>
-                <About/>
-            </div>
-        )
-    }
+    return(
+        <div className="content">
+            <Detail backproject={backproject} products={data.products}/>
+            <Status amount={amount}  total={total} backers={backers}/>
+            <About/>
+        </div>
+    )
 }
