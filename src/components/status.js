@@ -4,14 +4,14 @@ import "antd/dist/antd.css";
 import { Progress ,Divider} from 'antd';
 import { OmitProps } from "antd/lib/transfer/ListBody";
 
-
+const hstyle = {color:"black",fontSize:"200%",fontWeight:"700"}
 export default function Status(props) {
         
         return(
             <div className="section">
                 <div className="status">
                     <div className="backed">
-                        <h style={{color:"black",fontSize:"200%",fontWeight:"700"}}>${props.amount}</h>
+                        <h style={hstyle}>${props.amount}</h>
                         <div className="text-section">
                             <p>
                             of $1000000 backed
@@ -20,7 +20,7 @@ export default function Status(props) {
                     </div>
                     <div className="verticaldivider"/>
                     <div className="backers">
-                        <h style={{color:"black",fontSize:"200%",fontWeight:"700"}}>
+                        <h style={hstyle}>
                             {props.backers} 
                         </h>
                         <div className="text-section">
@@ -34,7 +34,7 @@ export default function Status(props) {
 
                     </div>
                     <div className="daysleft">
-                        <h style={{color:"black",fontSize:"200%",fontWeight:"700"}}>
+                        <h style={hstyle}>
                             56
                         </h>
                         <div className="text-section">
